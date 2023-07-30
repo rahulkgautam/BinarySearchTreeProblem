@@ -6,10 +6,18 @@ namespace BinarySearchTree
     {
         static void Main()
         {
-            BinarySearchTree<int> bst = new BinarySearchTree<int>();
-            bst.Add(56);
-            bst.Add(30);
-            bst.Add(70);
+            BinaryTree binaryTree = new BinaryTree();
+
+            binaryTree.Add(50);
+            binaryTree.Add(30);
+            binaryTree.Add(20);
+            binaryTree.Add(40);
+            binaryTree.Add(70);
+            binaryTree.Add(60);
+            binaryTree.Add(80);
+
+            int totalNodes = binaryTree.Size();
+            Console.WriteLine($"Total nodes in the binary tree: {totalNodes}");
         }
     }
 }
