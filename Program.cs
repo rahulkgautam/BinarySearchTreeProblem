@@ -13,11 +13,16 @@ namespace BinarySearchTree
             binaryTree.Add(20);
             binaryTree.Add(40);
             binaryTree.Add(70);
-            binaryTree.Add(60);
+            binaryTree.Add(63);
             binaryTree.Add(80);
 
-            int totalNodes = binaryTree.Size();
-            Console.WriteLine($"Total nodes in the binary tree: {totalNodes}");
+            int targetValue = 63;
+            bool isFound = binaryTree.Search(targetValue);
+            if (isFound)
+                Console.WriteLine($"{targetValue} is present in the binary tree.");
+            else
+                Console.WriteLine($"{targetValue} is not present in the binary tree.");
+            
         }
     }
 }

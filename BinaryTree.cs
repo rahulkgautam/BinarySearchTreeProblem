@@ -41,19 +41,30 @@ namespace BinarySearchTree
             return current;
         }
 
-        public int Size()
+        public bool Search(int value)
         {
-            return CountNodes(root);
+            return SearchNode(root, value);
         }
 
-        private int CountNodes(TreeNode node)
+        private bool SearchNode(TreeNode node, int value)
         {
             if (node == null)
             {
-                return 0;
+                return false;
             }
 
-            return 1 + CountNodes(node.Left) + CountNodes(node.Right);
+            if (value == node.Value)
+            {
+                return true;
+            }
+            else if (value < node.Value)
+            {
+                return SearchNode(node.Left, value);
+            }
+            else
+            {
+                return SearchNode(node.Right, value);
+            }
         }
     }
 }
